@@ -17,5 +17,10 @@
 
 nat = "ip nat inside source list ACL interface FastEthernet0/1 overload"
 
+<<<<<<< HEAD
 result = nat.replace('FastEthernet0/1','GigabitEthernet0/1')
+=======
+result = nat.replace('FastEthernet','GigabitEthernet')
+
+>>>>>>> b3d91c9092bc5bb460e141373f451a4068be6747
 print(result)

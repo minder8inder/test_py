@@ -28,3 +28,22 @@ Next-Hop              {}
 Last update           {}
 Outbound Interface    {}
 """
+
+ospf_route = "10.0.24.0/24 [110/41] via 10.0.13.3, 3d18h, FastEthernet0/0"
+ospf_route = ospf_route.replace(',',' ').replace('[','').replace(']','').split()
+
+output = """
+Prefix,             {}
+AD/Metric,          {}
+Next-Hop,           {}
+Last update,        {}
+Outbound Interface  {}
+"""
+
+print(output.format( 
+ospf_route[0],
+ospf_route[1],
+ospf_route[3],
+ospf_route[4],
+ospf_route[5]
+))
