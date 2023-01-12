@@ -46,3 +46,6 @@ london_co = {
         "routing": True,
     },
 }
+
+model = input('Введите модель устройства: ')
+print(london_co[model])

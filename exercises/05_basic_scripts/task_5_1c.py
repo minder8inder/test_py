@@ -49,3 +49,11 @@ london_co = {
         "routing": True,
     },
 }
+
+model = input('Введите модель устройства: ')
+names = ', '.join(london_co[model].keys())
+parametr = input(f'Введите параметр ({names}): ')
+
+print(london_co[model].get(parametr,'Такого параметра нет'))
+
+
