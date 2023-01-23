@@ -30,3 +30,21 @@ Out[1]: '11111111111111111111111111110000'
 
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 """
+ip = input('Введите подсеть: \n').split('.')
+mask = str(ip[-1]).split('/')
+mask1 = '1' * int(mask[-1]) + '0' * int(32 - int(mask[-1]))
+print(mask1)
+m1,m2,m3,m4 = mask1[0:7], mask1[8:15], mask1[16:23], mask1[24:31]
+
+output ="""
+{0:<10}{1:<10}{2:<10}{3:<10}
+{0:08b}  {1:08b}  {2:08b}  {3:08b}
+"""
+
+
+print('Network:\n')
+print(output.format(int(ip[0]),int(ip[1]),int(ip[2]),int(mask[0])))
+print('Mask:\n')
+print('{0:<10}{1:<10}{2:<10}{3:<10}'.format(int(m1,2),int(m2,2),int(m3,2),int(m4,2)))
+print("{0:<10}{1:<10}{2:<10}{3:<10}".format(m1,m2,m3,m4))
+
