@@ -33,8 +33,7 @@ Out[1]: '11111111111111111111111111110000'
 ip = input('Введите подсеть: \n').split('.')
 mask = str(ip[-1]).split('/')
 mask1 = '1' * int(mask[-1]) + '0' * int(32 - int(mask[-1]))
-print(mask1)
-m1,m2,m3,m4 = mask1[0:7], mask1[8:15], mask1[16:23], mask1[24:31]
+m1,m2,m3,m4 = mask1[0:8], mask1[8:16], mask1[16:24], mask1[24:32]
 
 output ="""
 Network:
