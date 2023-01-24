@@ -71,6 +71,7 @@ vlan = input('Введите номер влан(ов): ')
 
 access = """
 interface {}
+<<<<<<< HEAD
 "switchport mode access",
 "switchport access vlan {}",
 "switchport nonegotiate",
@@ -82,6 +83,19 @@ interface {}
 "switchport trunk encapsulation dot1q",
 "switchport mode trunk",
 "switchport trunk allowed vlan {}",
+=======
+switchport mode access,
+switchport access vlan {},
+switchport nonegotiate,
+spanning-tree portfast,
+spanning-tree bpduguard enable,
+"""
+trunk = """
+interface {}
+switchport trunk encapsulation dot1q,
+switchport mode trunk,
+switchport trunk allowed vlan {},
+>>>>>>> 3abec8a27785f1940eb26be2e4b3fe97830f1129
 """
 general = {
     'access' : access,
