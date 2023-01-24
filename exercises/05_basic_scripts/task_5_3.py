@@ -70,7 +70,7 @@ int = input('Введите тип и номер интерфейса: ')
 vlan = input('Введите номер влан(ов): ')
 
 access = """
-Interface {}
+interface {}
 "switchport mode access",
 "switchport access vlan {}",
 "switchport nonegotiate",
@@ -78,7 +78,7 @@ Interface {}
 "spanning-tree bpduguard enable",
 """
 trunk = """
-Interface {}
+interface {}
 "switchport trunk encapsulation dot1q",
 "switchport mode trunk",
 "switchport trunk allowed vlan {}",
