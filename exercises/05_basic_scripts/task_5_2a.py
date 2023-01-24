@@ -53,16 +53,18 @@ ip = input('Введите подсеть: \n').split('.')
 mask = str(ip[-1]).split('/')
 mask1 = '1' * int(mask[-1]) + '0' * int(32 - int(mask[-1]))
 m1,m2,m3,m4 = mask1[0:8], mask1[8:16], mask1[16:24], mask1[24:32]
+binip = '{0:08b}{1:08b}{2:08b}{3:08b}'.format(int(ip[0]),int(ip[1]),int(ip[2]),int(mask[0]))
+network = binip[0:int(mask[-1])] + '0' * int(32-int(mask[-1]))
+tenip = '{}.{}.{}.{}'.format(int(network[0:8],2),int(network[8:16],2),int(network[16:24],2),int(network[24:32],2)).split('.')
+#print(tenip)
 
 output ="""
+
 Network:
 {0:<10}{1:<10}{2:<10}{3:<10}
 {0:08b}  {1:08b}  {2:08b}  {3:08b}
 """
-
-
-
-print(output.format(int(ip[0]),int(ip[1]),int(ip[2]),int(0)))
+print(output.format(int(tenip[0]),int(tenip[1]),int(tenip[2]),int(tenip[3])))
 print('Mask:')
 print('/',mask[-1],sep='')
 print('{0:<10}{1:<10}{2:<10}{3:<10}'.format(int(m1,2),int(m2,2),int(m3,2),int(m4,2)))
