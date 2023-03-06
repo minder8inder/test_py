@@ -40,6 +40,6 @@ while right == False:
         elif ip == '255.255.255.255':
             print('local broadcast')
         elif ip == '0.0.0.0':   
-            print('unassgined')
+            print('unassigned')
         else:
             print('unused')        
