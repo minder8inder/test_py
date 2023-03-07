@@ -105,20 +105,20 @@ for intf, vlan in trunk.items():
         if "add" in vlan:
             vlans = ",".join(vlan[1:])
             if command.endswith("allowed vlan"):
-                print(f"{command}" + " add " + f"{vlans}")
+                print(f" {command}" + " add " + f"{vlans}")
             else:
-                print(f"{command}")
+                print(f" {command}")
             continue
         if "only" in vlan:
             vlans = ",".join(vlan[1:])
             if command.endswith("allowed vlan"):
-                print(f"{command}" + " " + f"{vlans}")
+                print(f" {command}" + " " + f"{vlans}")
             else:
-                print(f"{command}")  
+                print(f" {command}")  
             continue  
         else:
             vlans = ",".join(vlan[1:])
             if command.endswith("allowed vlan"):
-                print(f"{command}" + " remove " + f"{vlans}")
+                print(f" {command}" + " remove " + f"{vlans}")
             else:
-                print(f"{command}")
+                print(f" {command}")
