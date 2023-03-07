@@ -14,3 +14,18 @@ Outbound Interface    FastEthernet0/0
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 
 """
+
+result = "\n{:20} {}" * 5
+with open("ospf.txt") as f:
+    for line in f:
+        route = line.replace(",", " ").replace("[", "").replace("]", "")
+        route = route.split()
+        
+        print(result.format(
+            "Prefix", route[1],
+            "AD/Metric", route[2],
+            "Next-Hop", route[4],
+            "Last update", route[5],
+            "Outbound interface", route[6]
+        ))
+        
