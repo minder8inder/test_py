@@ -40,3 +40,16 @@
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 
 """
+
+answer = "{:<10}{}{:>10}"
+
+table = []
+
+with open('CAM_table.txt') as f:
+    for line in f:
+        if "DYNAMIC" in line:
+            line = line.split()
+            table.append([int(line[0]),line[1],line[3]])
+
+for i in sorted(table):
+    print(answer.format(i[0],i[1],i[2]))
