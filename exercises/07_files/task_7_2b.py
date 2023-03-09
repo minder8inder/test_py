@@ -17,3 +17,15 @@
 """
 
 ignore = ["duplex", "alias", "configuration"]
+
+from sys import argv
+
+filename = argv[1]
+
+
+with open("config_sw1.txt") as file, open('config_sw1_new.txt','w') as newfile:
+    for line in file:
+        newline = line.split()
+        words = set(newline) & set(ignore)
+        if not line.startswith("!") and not words:
+            newfile.write(line)
