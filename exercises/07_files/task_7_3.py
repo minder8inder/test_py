@@ -20,3 +20,14 @@
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 
 """
+from sys import argv
+
+mac = argv[1]
+
+answer = "{:<10}{}{:>10}"
+
+with open(mac) as f:
+    for line in f:
+        if "DYNAMIC" in line:
+            line = line.split()
+            print(answer.format(line[0],line[1],line[3]))
