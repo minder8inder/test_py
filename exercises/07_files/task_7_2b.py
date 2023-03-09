@@ -20,8 +20,7 @@ ignore = ["duplex", "alias", "configuration"]
 
 from sys import argv
 
-filename = argv[1]
-
+filename, newfilename = argv[1], argv[2]
 
 with open("config_sw1.txt") as file, open('config_sw1_new.txt','w') as newfile:
     for line in file:
