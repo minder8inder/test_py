@@ -20,13 +20,10 @@
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 
 """
-from sys import argv
-
-mac = argv[1]
 
 answer = "{:<10}{}{:>10}"
 
-with open(mac) as f:
+with open('CAM_table.txt') as f:
     for line in f:
         if "DYNAMIC" in line:
             line = line.split()
