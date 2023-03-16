@@ -68,7 +68,7 @@ def generate_trunk_config(intf_vlan_mapping, trunk_template):
         configuration.append(f"interface {int}")
         for command in trunk_template:
             if command.endswith("allowed vlan"):
-                vlans = " ".join(str(i) for i in vlans)
+                vlans = ",".join(str(i) for i in vlans)
                 configuration.append(f"{command} {vlans}")
             else:
                 configuration.append(command)
