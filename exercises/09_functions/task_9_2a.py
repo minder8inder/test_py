@@ -71,7 +71,7 @@ def generate_trunk_config(intf_vlan_mapping, trunk_template):
                 configuration.append(f"{command} {vlans}")
             else:
                 configuration.append(command)
-    config[f"interface {int}"] = ", ".join(configuration) 
+    config[f"interface {int}"] = configuration
     return(config)
 
 print(generate_trunk_config(trunk_config, trunk_mode_template))
