@@ -64,3 +64,18 @@ def ignore_command(command, ignore):
         if word in command:
             ignore_status = True
     return ignore_status
+  
+  
+  def convert_config_to_dict(config_file = 'config_sw1.txt'):
+    result = {}
+    with open(config_file) as f:
+        for line in f:
+            line = line.rstrip()
+            if ignore_command(line,ignore) == False and not line.startswith("!"):
+                firstline = line
+                result[firstline] = []
+            else:
+                result[firstline].append(line.rstrip())                    
+    return(result)
+                    
+     
